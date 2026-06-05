@@ -1,0 +1,1 @@
+here in this lesson we are learning syntax of Hashicorp configuration language -> HCL
