@@ -1,0 +1,2 @@
+nginx -> ami-053d8044b1108bd96
+ubuntu -> ami-07b301a23def3266d

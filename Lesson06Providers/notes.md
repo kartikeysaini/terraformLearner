@@ -5,3 +5,8 @@ A -> for this we use alias for provider region which we can use in the resource 
 use different regions. 
 
 Example -> check providers.tf for the example
+
+
+also if we make any changes in the providers of the terraform file , we will have to initialize the terraform as well.
+
+using -> terraform init -upgrade
