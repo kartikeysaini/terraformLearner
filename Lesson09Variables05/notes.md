@@ -1,0 +1,1 @@
+auto.tfvars have more precedence over default vars and tfvars files. thats where we can also specify the variable names
