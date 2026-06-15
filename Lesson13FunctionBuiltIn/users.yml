@@ -1,0 +1,5 @@
+users:
+  - name: Kartikey
+    role: admin
+  - name: Niharika
+    role: user

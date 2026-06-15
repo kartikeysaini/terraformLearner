@@ -1,0 +1,1 @@
+how to use various built in functions in terraform
