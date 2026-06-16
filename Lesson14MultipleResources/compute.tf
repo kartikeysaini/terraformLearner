@@ -38,19 +38,32 @@ data "aws_ami" "ubuntu" {
 
 # }
 
-resource "aws_instance" "from_list" {
-  count         = length(var.ec2-instance-config-list)
-  ami           = local.ami_ids[var.ec2-instance-config-list[count.index].ami]
-  instance_type = var.ec2-instance-config-list[count.index].instance_type
+resource "aws_instance" "from_map" {
+  for_each      = var.ec2_instance_config_map
+  ami           = local.ami_ids[each.value.ami]
+  instance_type = each.value.instance_type
 
-  subnet_id = aws_subnet.main[count.index % length(aws_subnet.main)].id
+  subnet_id = aws_subnet.main[0].id
 
   tags = {
-    Name      = "${local.Name}-${count.index}"
+    Name      = "${local.Name}-${each.key}"
     ManagedBy = local.ManagedBy
   }
-
 }
+
+# resource "aws_instance" "from_list" {
+#   count         = length(var.ec2-instance-config-list)
+#   ami           = local.ami_ids[var.ec2-instance-config-list[count.index].ami]
+#   instance_type = var.ec2-instance-config-list[count.index].instance_type
+
+#   subnet_id = aws_subnet.main[count.index % length(aws_subnet.main)].id
+
+#   tags = {
+#     Name      = "${local.Name}-${count.index}"
+#     ManagedBy = local.ManagedBy
+#   }
+
+# }
 
 # resource "aws_instance" "from_count" {
 #   count         = var.ec2-instance-count
