@@ -1,0 +1,9 @@
+users:
+  - username: "Kartikey_Saini"
+    role: "admin"
+  - username: "Bhuvan_Sharma"
+    role: "readonly"
+  - username: "Rohit_Gupta"
+    role: "developer"
+  - username: "Naman_Verma"
+    role: "readonly"
